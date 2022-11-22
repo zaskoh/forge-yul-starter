@@ -18,13 +18,13 @@ object "YulExampleContract" {
             switch shr(0xf8, calldataload(0))
             case 0x00 {
                 let p := mload(0x40)
-                mstore(p, shl(0x60, loadimmutable("foo")))
-                return(p, 20)
+                mstore(p, loadimmutable("foo"))
+                return(p, 32)
             }
             case 0x01 {
                 let p := mload(0x40)
-                mstore(p, shl(96, loadimmutable("wethAddress")))
-                return(p, 20)
+                mstore(p, loadimmutable("wethAddress"))
+                return(p, 32)
             }
             revert(0,0)
         }

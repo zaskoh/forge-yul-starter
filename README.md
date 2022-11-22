@@ -1,34 +1,20 @@
-# forge-starter template
-
-<p>
-    <a href="https://github.com/zaskoh/forge-starter/actions/workflows/test.yml">
-        <img alt="GitHub Workflow Status" src="https://github.com/zaskoh/forge-starter/workflows/test/badge.svg?style=flat-square">
-    </a>
-</p>
+# forge-yul-starter template
 
 # Documentation
 [Checkout foundry](https://book.getfoundry.sh/)
 
-### Starting template for new foundry projects to get going with solidity
+### Starting template to start develop a yul contract
 The template comes with:
 - the [forge standard](https://book.getfoundry.sh/forge/forge-std) library
-- [solmate](https://github.com/transmissions11/solmate) from transmissions11
-- an contract example with tests and a deploy script
-- a yul example to also write yul contracts and implement tests for it
-- github workflow for testing
+- a yul-contract example to write yul contracts and implement tests for it
+- an example how to test your yul contract via an interface or direct callings
 
 ---
 
-### todos after installing the template
-- If you don't want to work with a yul-contract you can remove:
-    - /yul
-    - /test/YulExample.t.sol
-    - /test/lib/
-    - /src/YulExample.sol
-    - remove ffi = true in foundry.toml
-- remove .github/workflows if you don't need them / want them
-- checkout .env.example and copy it to .env
-- remove solemate if you don't need it (forge remove solmate)
+### notes
+- yul contracts go into /yul
+- if your yul contract adhears to a clean abi, you can use a interface in /src for easier testing
+- if you have problems, checkout /test/lib/YulDeployer.sol and follow comments
 
 ---
 
@@ -41,7 +27,7 @@ forge test
 forge remappings > remappings.txt
 
 // update dependencies
-forge update lib/solmate
+forge update lib/xxxx
 
 // gas report
 forge test --gas-report

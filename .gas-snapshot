@@ -1,4 +1,0 @@
-ExampleContractTest:testStartState() (gas: 7506)
-ExampleContractTest:testSwitchToDead() (gas: 29184)
-YulExampleTest:test00() (gas: 5337)
-YulExampleTest:test01() (gas: 5318)

@@ -20,9 +20,14 @@ contract YulExampleTest is Test {
 
         address expectedDead;
         assembly {
-            expectedDead := mload(add(res, 20))
+            expectedDead := mload(add(res, 32))
         }
         assertEq(expectedDead, 0x000000000000000000000000000000000000dEaD);
+    }
+
+    function test00ViaInterface() public {
+        address res = yulExample.test2001551086();
+        assertEq(res, 0x000000000000000000000000000000000000dEaD);
     }
 
     function test01() public {
@@ -31,8 +36,13 @@ contract YulExampleTest is Test {
 
         address expectedWeth;
         assembly {
-            expectedWeth := mload(add(res, 20))
+            expectedWeth := mload(add(res, 32))
         }
         assertEq(expectedWeth, 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2);
+    }
+
+    function test01ViaInterface() public {
+        address res = yulExample.OjASUJbBfDURrB();
+        assertEq(res, 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2);
     }
 }
